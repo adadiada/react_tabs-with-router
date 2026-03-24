@@ -1,11 +1,15 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import { App } from './App';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
 import { Homepage } from './components/Home';
 import { Tabspage } from './components/Tabs';
-// import { Navigate } from 'react-router-dom';
 
 export const Root = () => (
   <Router>
@@ -15,9 +19,9 @@ export const Root = () => (
         <Route path="tabs">
           <Route index element={<Tabspage />} />
           <Route path=":tabId" element={<Tabspage />} />
-          {/* <Route path="/home" element={<Navigate to="/" replace />} /> */}
         </Route>
-        <Route path="*" element={<h1>Page not found</h1>} />
+        <Route path="home" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<h1 className="title">Page not found</h1>} />
       </Route>
     </Routes>
   </Router>
