@@ -19,7 +19,7 @@ export const App = () => (
           <NavLink
             to="/tabs"
             className={({ isActive }) =>
-              `navbar-item${isActive ? ' is-active' : ''}`
+              `navbar-item ${isActive ? ' is-active' : ''}`
             }
           >
             Tabs
